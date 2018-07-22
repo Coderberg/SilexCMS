@@ -1,0 +1,26 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+    <div class="container">
+        <div id="content"><br>
+            <div>
+                <h2><a href="{{ path('articles.single', { 'id': id }) }}">{{ title }}</a></h2>
+
+                <p>Posted by <a href="#">{{ author_name }}</a> on {{ date }}
+
+                    &nbsp;&bull;&nbsp; <a href='/'>To home page</a>
+                </p>
+
+                <div>
+                    <p><img class="img-fluid" src="/uploads/images/full/{{ id }}.jpg" alt="{{ title }}" /></p>
+                    <p>{{ text | raw }}</p>
+                </div>
+            </div>
+            <p><a href='/'>To home page</a></p>
+            <div style="clear: both;">&nbsp;</div>
+        </div>
+
+        <!-- end #content -->
+        <div style="clear: both;">&nbsp;</div>
+    </div>
+{% endblock %}

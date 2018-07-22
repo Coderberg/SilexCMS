@@ -1,0 +1,65 @@
+{% extends "admin/layout.html.twig" %}
+
+{% block content %}
+    
+    <style>
+        .margin-20 {
+            margin-bottom: 20px;
+        }
+        a.bigbtn {
+            display: block;
+            color: rgba(0,0,0,.67);
+            background-color: rgba(0,0,0,.03);
+            padding: 16px 0;
+            transition: all 0.15s cubic-bezier(0.35, 0, 0.25, 1);
+        }
+        a.bigbtn:hover, a.bigbtn:focus {
+            color: rgba(0,0,0,.87);
+            background-color: rgba(0,0,0,.05);
+            text-decoration: none;
+        }
+    </style>
+    
+    <div class="container">
+        
+            <br>
+            
+            <h2>Good afternoon, dear administrator!</h2>
+            
+            <br>
+            
+            <p>You have the following options</p>
+            
+            <br>
+            <div class="row">
+
+                <div class="col-sm-3 margin-20">
+                    <a class="bigbtn" href="{{path('admin.create_articles')}}">
+                        <div class="text-center">
+                            <div class="icon-cpanel"><i class="far fa-plus-square fa-5x"></i></div>
+                            Add new article
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="col-sm-3 margin-20">
+                    <a class="bigbtn" href="{{path('admin.articles')}}">
+                        <div class="text-center">
+                            <div class="icon-cpanel"><i class="far fa-edit fa-5x"></i></div>
+                            Edit articles <span class="badge">{{ total_articles }}</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="col-sm-3 margin-20">
+                    
+                </div>
+            </div>
+            
+            <br><br><br><br><br><br><br>
+    </div>
+        
+{% endblock %}
+    
+    
+  

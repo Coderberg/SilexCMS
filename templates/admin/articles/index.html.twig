@@ -1,0 +1,35 @@
+{% extends "admin/layout.html.twig" %}
+
+{% block content %}
+    
+    <div class="container">
+        <br>
+        <h4>Total articles ({{ total }})</h4>
+
+        <br>
+
+        <table class="table">
+            <tr>
+                <th>ID</th>
+                <th>Author</th>
+                <th>Title</th>
+                <th></th>
+                <th></th>
+            </tr>
+            {% for article in articles %}
+            <tr>
+                <td>{{ article.id }}</td>
+                <td>{{ article.author_name }}</td>
+                <td><a href="{{ path('articles.single', { 'id': article.id }) }}">{{ article.title }}</a></td>
+                <td><a class="btn btn-sm btn-outline-primary" href="{{ path('admin.articles_update', { 'id': article.id }) }}">Edit</a></td>
+                <td><a class="btn btn-sm btn-outline-danger" href="{{ path('admin.articles_delete', { 'id': article.id }) }}">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        
+          <br>
+        {{ pagination | raw }}
+
+    </div>
+        
+{% endblock %}

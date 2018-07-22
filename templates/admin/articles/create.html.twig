@@ -1,0 +1,74 @@
+{% extends "admin/layout.html.twig" %}
+
+{% block content %}
+    
+    <style>
+        .invalid-feedback {
+            display: block;
+        }
+    </style>
+
+    <div class="container">
+        <br>
+
+        <h4>Create article</h4>
+
+        <hr>
+
+        <div class="col-lg-8">
+            
+            
+        {{ form_start(form) }}
+            <div class="form-group">
+                {{ form_label(form.title) }}
+                {{ form_widget(form.title, { attr: { class: 'form-control' } }) }}
+                {% if form_errors(form.title) %}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.title) }}
+                    </div>
+                {% endif %}
+            </div>
+            
+            <div class="form-group">
+                {{ form_label(form.author) }}
+                {{ form_widget(form.author, { attr: { class: 'form-control' } }) }}
+                {% if form_errors(form.author) %}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.author) }}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{ form_label(form.text) }}
+                {{ form_widget(form.text, { attr: { class: 'form-control' } }) }}
+                {% if form_errors(form.text) %}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.text) }}
+                    </div>
+                {% endif %}
+            </div>
+            
+            <div class="form-group">
+                {{ form_label(form.picture) }}
+                {{ form_widget(form.picture, { attr: { class: 'form-control-file' } }) }}
+                {% if form_errors(form.picture) %}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.picture) }}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{ form_widget(form.submit, { attr: { class: 'btn btn-primary' } }) }}
+            </div>
+
+        {{ form_end(form) }}  
+
+        </div>
+        <br><br><br><br>
+    </div>
+
+{% endblock %}
+
+

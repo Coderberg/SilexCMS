@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>{% block title '' %} - Simple Silex Application</title>
+
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" 
+              integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" 
+              crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Site Logo</a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
+		
+      </li>
+	<li class="nav-item">
+            <a class="nav-link" href="{{path('admin.create_articles')}}">+ Add article</a>
+        </li>
+    </ul>
+      
+      
+      <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="{{path('admin')}}">Admin</a></li>
+      </ul>
+      
+  </div>
+</nav>
+<!-- end #menu -->
+{% block content %}{% endblock %}
+
+<div class="container">
+	<p>Copyright (c) 2018 Sitename.com</p>
+</div>
+
+
+<!-- end #footer -->
+</body>
+</html>
