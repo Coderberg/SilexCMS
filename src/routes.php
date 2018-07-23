@@ -8,7 +8,8 @@ $app->get('/', 'App\Controllers\ArticleController::index')
 $app->get('/articles', 'App\Controllers\ArticleController::index')
         ->bind('articles');
 
-$app->get('/articles/page/{page}', 'App\Controllers\ArticleController::index');
+$app->get('/articles/page/{page}', 'App\Controllers\ArticleController::index')
+    ->assert('page', '[0-9]+');
 
 $app->get('/articles/{id}.html', 'App\Controllers\ArticleController::article')
     ->assert('id', '[0-9]+')
@@ -25,7 +26,8 @@ $app->get('/admin', 'App\Controllers\Admin\DashboardController::index')
 $app->get('/admin/articles', 'App\Controllers\Admin\ArticleController::index')
         ->bind('admin.articles');
 
-$app->get('/admin/articles/page/{page}', 'App\Controllers\Admin\ArticleController::index');
+$app->get('/admin/articles/page/{page}', 'App\Controllers\Admin\ArticleController::index')
+    ->assert('page', '[0-9]+');
 
 $app->match('/admin/articles/create', 'App\Controllers\Admin\ArticleController::create')
         ->bind('admin.create_articles');
