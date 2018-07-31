@@ -22,7 +22,7 @@
                 <td>{{ article.author_name }}</td>
                 <td><a href="{{ path('articles.single', { 'id': article.id }) }}">{{ article.title }}</a></td>
                 <td><a class="btn btn-sm btn-outline-primary" href="{{ path('admin.articles_update', { 'id': article.id }) }}">Edit</a></td>
-                <td><a class="btn btn-sm btn-outline-danger" href="{{ path('admin.articles_delete', { 'id': article.id }) }}">Delete</a></td>
+                <td><a class="btn btn-sm btn-outline-danger" onclick="if(confirm('Are you sure you want to delete this item?')){ return true }else{ return false }" href="{{ path('admin.articles_delete', { 'id': article.id }) }}">Delete</a></td>
             </tr>
             {% endfor %}
         </table>
