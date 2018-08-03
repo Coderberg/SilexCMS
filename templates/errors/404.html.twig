@@ -1,5 +1,15 @@
 {% extends "layout.html.twig" %}
 
 {% block content %}
-    Page not found.
+    <style>
+        h1 {font-size: 6rem !important;}
+        .lead {font-size: 2.5rem;}
+    </style>
+    <div class="jumbotron">
+        <div class="container text-center">
+            <h1>404&nbsp;</h1>
+            <p class="lead">page not found</p>
+            <p><a class="btn btn-lg btn-success" href="{{path('homepage')}}" role="button">Go to Homepage</a></p>
+        </div>
+    </div>
 {% endblock %}

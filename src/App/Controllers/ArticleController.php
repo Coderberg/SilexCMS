@@ -29,7 +29,20 @@ class ArticleController
         $article = new Article();
         
         $data = $article->getArticle($request, $app);
-        
-        return $app['twig']->render('article.html.twig', $data);
+
+        if ($data) {
+            // Return article
+            return $app['twig']->render('article.html.twig', $data);
+
+        } else {
+            if (!$app['debug']) {
+                // Return page 404 for users
+                return $app['twig']->render('errors/404.html.twig');
+            } else {
+
+                // Return all errors for developer
+                return $app['twig']->render('article.html.twig', $data);
+            }
+        }
     }
 }
