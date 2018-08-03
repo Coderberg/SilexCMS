@@ -36,7 +36,7 @@ class ArticleController
 
         } else {
             if (!$app['debug']) {
-                // Return page 404 for users
+                // Return 404 page for users
                 return $app['twig']->render('errors/404.html.twig');
             } else {
 
