@@ -232,7 +232,7 @@ class ArticleController
         }
         
         // Html form
-        return $app['twig']->render('admin/articles/create.html.twig', [
+        return $app['twig']->render('admin/articles/update.html.twig', [
             'form' => $form->createView()
         ]);
     }
