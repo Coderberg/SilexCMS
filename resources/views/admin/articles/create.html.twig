@@ -5,12 +5,6 @@
 {% endblock %}
 
 {% block content %}
-    
-    <style>
-        .invalid-feedback {
-            display: block;
-        }
-    </style>
 
     <div class="container">
         <br>
@@ -75,4 +69,9 @@
 
 {% endblock %}
 
-
+{% block scripts %}
+    <script src="https://cdn.ckeditor.com/4.10.0/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace( 'form[text]' );
+    </script>
+{% endblock %}

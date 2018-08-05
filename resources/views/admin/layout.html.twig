@@ -63,16 +63,7 @@
 <!-- Scripts -->
 <script src="{{ asset('js/app.min.js') }}"></script>
 
-<script src="https://cdn.ckeditor.com/4.10.0/standard/ckeditor.js"></script>
-<script>
-    let cur_url = window.location.href;
-    if (cur_url.indexOf('create') !== -1 || cur_url.indexOf('update') !== -1) {
-        
-        CKEDITOR.replace( 'form[text]' );
-    }
-</script>
-<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/regular.js" integrity="sha384-sAzYCvbTTKFOxT4VHu+ZjHRMXjvfjT6TAqOng28g4jba88Peg5+hkoVIqQKGjmj1" crossorigin="anonymous"></script>
-<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/fontawesome.js" integrity="sha384-NY6PHjYLP2f+gL3uaVfqUZImmw71ArL9+Roi9o+I4+RBqArA2CfW1sJ1wkABFfPe" crossorigin="anonymous"></script>
+{% block scripts %}{% endblock %}
 
 </body>
 </html>
