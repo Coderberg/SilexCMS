@@ -31,6 +31,10 @@ class ArticleController
         $data = $article->getArticle($request, $app);
 
         if ($data) {
+
+            // Latest articles for sidebar
+            $data['items'] =  $article->getLatestArticles(6, $app);
+
             // Return article
             return $app['twig']->render('article.html.twig', $data);
 

@@ -6,25 +6,47 @@
 
 {% block content %}
     <div class="container">
-        <div id="content"><br>
-            <div>
-                <h2><a href="{{ path('articles.single', { 'id': id }) }}">{{ title }}</a></h2>
+        <div class="row">
 
-                <p>Posted by <a href="#">{{ author_name }}</a> on {{ date }}
-
-                    &nbsp;&bull;&nbsp; <a href='/'>To home page</a>
-                </p>
-
+            <!-- Article -->
+            <div class="col-md-8"><br>
                 <div>
-                    <p><img class="img-fluid" src="/uploads/images/full/{{ id }}.jpg" alt="{{ title }}" /></p>
-                    <p>{{ text | raw }}</p>
+                    <h2><a href="{{ path('articles.single', { 'id': id }) }}">{{ title }}</a></h2>
+
+                    <p>Posted by <a href="#">{{ author_name }}</a> on {{ date }}
+
+                        &nbsp;&bull;&nbsp; <a href='/'>To home page</a>
+                    </p>
+
+                    <div>
+                        <p><img class="img-fluid" src="/uploads/images/full/{{ id }}.jpg" alt="{{ title }}" /></p>
+                        <p>{{ text | raw }}</p>
+                    </div>
+                </div>
+                <p><a href='/'>To home page</a></p>
+                <div style="clear: both;">&nbsp;</div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-md-4"><br>
+                <div class="list-group">
+
+                {% for item in items %}
+
+                    <a href="{{ path('articles.single', { 'id': item.id }) }}" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <small class="text-muted">{{ item.date }}</small>
+                        </div>
+                        <p class="mb-1">{{ item.title }}</p>
+                    </a>
+
+                {% endfor %}
+
                 </div>
             </div>
-            <p><a href='/'>To home page</a></p>
-            <div style="clear: both;">&nbsp;</div>
         </div>
 
-        <!-- end #content -->
+
         <div style="clear: both;">&nbsp;</div>
     </div>
 {% endblock %}

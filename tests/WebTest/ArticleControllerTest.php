@@ -16,7 +16,7 @@ class ArticleControllerTest extends WebTestCase
         $crawler = $client->request('GET', '/');
 
         $this->assertTrue($client->getResponse()->isOk());
-        $this->assertContains('Last articles', $crawler->filter('body')->text());
+        $this->assertContains('Latest articles', $crawler->filter('body')->text());
     }
 
     public function testArticle()

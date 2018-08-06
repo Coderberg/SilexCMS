@@ -121,6 +121,18 @@ class Article
         return $data;
     }
 
+    // Get latest n articles for sidebar
+    public function getLatestArticles(int $n, $app)
+    {
+        $sql = "SELECT id, title, date 
+                FROM articles ORDER BY date DESC 
+                LIMIT ".(int)$n;
+
+        $items = $app['db']->fetchAll($sql);
+
+        return $items;
+    }
+
     // Get single article by id
     public function getArticle($request, $app)
     {
