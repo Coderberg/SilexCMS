@@ -9,7 +9,7 @@ module.exports = {
   ],
   output: {
     filename: 'js/app.min.js',
-	path: path.resolve(__dirname, 'web')
+	path: path.resolve(__dirname, 'public')
   },
   devtool: "source-map",
   module: {
