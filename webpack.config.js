@@ -1,21 +1,21 @@
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const fs = require('fs')
+const fs = require('fs');
 
 module.exports = {
   entry: [
-    './resources/assets/js/index.js',
-    './resources/assets/scss/style.scss'
+    './resources/js/app.js',
+    './resources/scss/app.scss'
   ],
   output: {
-    filename: 'js/app.min.js',
+    filename: 'js/app.js',
 	path: path.resolve(__dirname, 'public')
   },
   devtool: "source-map",
   module: {
     rules: [{
         test: /\.js$/,
-        include: path.resolve(__dirname, 'resources/assets/js'),
+        include: path.resolve(__dirname, 'resources/js'),
         use: {
           loader: 'babel-loader',
           options: {
@@ -25,7 +25,7 @@ module.exports = {
       },
       {
         test: /\.(css|sass|scss)$/,
-        include: path.resolve(__dirname, 'resources/assets/scss'),
+        include: path.resolve(__dirname, 'resources/scss'),
         use: ExtractTextPlugin.extract({
           use: [{
               loader: "css-loader",
@@ -54,13 +54,13 @@ module.exports = {
             }
           ]
         })
-      },
+      }
     ]
   },
   plugins: [
     new ExtractTextPlugin({
-      filename: 'css/app.min.css',
-      allChunks: true,
-    }),
+      filename: 'css/app.css',
+      allChunks: true
+    })
   ]
 };
