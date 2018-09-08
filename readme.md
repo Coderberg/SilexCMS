@@ -26,7 +26,7 @@ The user interface is built with [Bootstrap 4](http://getbootstrap.com).
    composer install
    ```
 
-4. After installing Silex, you should configure your web server's document / web root to be the ```web``` directory.
+4. After installing Silex, you should configure your web server's document / web root to be the ```public``` directory.
 
 5. Create an empty MySQL database
 
